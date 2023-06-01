@@ -1,0 +1,19 @@
+CREATE TABLE etudiant(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    matricule varchar(50) NOT NULL,
+    nom varchar(150) NOT NULL,
+    prenom varchar(150) NOT NULL,
+    date_N varchar(15) NOT NULL,
+    sexe varchar(50) NOT NULL,
+    addresse varchar(500) NOT NULL, 
+    BP varchar(20) NOT NULL,
+    Ville varchar(100) NOT NULL)
+    ENGINE INNODB;
+
+CREATE TABLE contrat(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    Num_contrat varchar(20) NOT NULL,
+    debut_val datetime NOT NULL,
+    fin_val datetime NOT NULL,
+    matricule_etd varchar(50) NOT NULL,
+    CONSTRAINT clePrimaire FOREIGN KEY(matricule_etd) REFERENCES etudiant(matricule));

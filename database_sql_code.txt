@@ -1,0 +1,22 @@
+
+CREATE TABLE etudiant(
+    id_etd int AUTO_INCREMENT PRIMARY KEY,
+    matricule varchar(50) NOT NULL,
+    annee varchar(20) NOT NULL, 
+    filiere varchar(50) NOT NULL,
+    nom varchar(100) NOT NULL,
+    prenom varchar(200) NOT NULL,
+    dateN varchar(20) NOT NULL,
+    lieuN varchar(200) NOT NULL,
+    nationalite varchar(100) NOT NULL,
+    sexe varchar(10) NOT NULL,
+    situation_matrimoniale varchar(50) NOT NULL,
+    diplome_obtenu varchar(100) NOT NULL,
+    BP varchar(50) NOT NULL,
+    phone varchar(50) NOT NULL,
+    email varchar(100) NOT NULL,
+    address varchar(1000) NOT NULL,
+    type_payement varchar(50) NOT NULL,
+    frais_scolarite int(50) NOT NULL,
+    date_Payement varchar(20) NOT NULL)
+    ENGINE INNODB;

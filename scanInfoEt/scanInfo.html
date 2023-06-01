@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/info.css">
+    
+    <title>ESIG</title>
+    <script src="/js/scanQr.min.js"></script>
+
+</head>
+<body>
+
+
+  <div class="content">
+
+    <div class="scanBoxHeader">
+      <h1> Scanner & Recherche</h1>
+    </div>
+
+    <div class="scanBox" >
+        <div class="row" >
+            <div class="col scanLeftBox">
+              <div style="width:350px;" id="reader"></div>
+            </div>
+            <div class="col scanRightBox" >
+              <h4>SCAN RESULT</h4>
+              <div id="result" class="result">Result Here</div>
+              <div class="btnBox" style="display: flex; flex-direction: column;gap: 2vh;">
+                <a type="submit" class="btn btnColor1" style="cursor: pointer;" >Recherche</a>
+                <a type="submit" class="btn btnColor2" style="cursor: pointer;">Control Access</a>
+              </div>
+
+            </div>
+          </div>
+    </div>
+
+    <div class="scanBoxBack">
+      <a href="index.html" class="btn btnColor3" >Retour</a>
+    </div>
+
+  </div>
+
+
+
+
+
+<script type="text/javascript">
+function onScanSuccess(qrCodeMessage) {
+    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+    alert('identifiant est :'+qrCodeMessage)
+
+
+}
+
+function onScanError(errorMessage) {
+  //handle scan error
+}
+
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+let id=qrCodeMessage
+
+
+
+
+
+</script>
+</body>
+</html>
